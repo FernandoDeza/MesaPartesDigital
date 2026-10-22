@@ -50,7 +50,9 @@
             picLosOlivos = new PictureBox();
             picUPN = new PictureBox();
             pictureBox1 = new PictureBox();
-            label1 = new Label();
+            lblCodigoGenerado = new Label();
+            lblDniRuc = new Label();
+            txtDniRuc = new TextBox();
             ((System.ComponentModel.ISupportInitialize)picLosOlivos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picUPN).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -109,7 +111,7 @@
             // 
             lblTipoDocumento.AutoSize = true;
             lblTipoDocumento.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTipoDocumento.Location = new Point(209, 230);
+            lblTipoDocumento.Location = new Point(209, 265);
             lblTipoDocumento.Name = "lblTipoDocumento";
             lblTipoDocumento.Size = new Size(169, 21);
             lblTipoDocumento.TabIndex = 8;
@@ -121,7 +123,7 @@
             cboTipoDocumento.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cboTipoDocumento.FormattingEnabled = true;
             cboTipoDocumento.Items.AddRange(new object[] { "Solicitud", "Carta", "Oficio", "Otro" });
-            cboTipoDocumento.Location = new Point(414, 227);
+            cboTipoDocumento.Location = new Point(414, 262);
             cboTipoDocumento.Name = "cboTipoDocumento";
             cboTipoDocumento.Size = new Size(250, 29);
             cboTipoDocumento.TabIndex = 9;
@@ -130,7 +132,7 @@
             // 
             lblNumeroDocumento.AutoSize = true;
             lblNumeroDocumento.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNumeroDocumento.Location = new Point(209, 272);
+            lblNumeroDocumento.Location = new Point(209, 307);
             lblNumeroDocumento.Name = "lblNumeroDocumento";
             lblNumeroDocumento.Size = new Size(159, 21);
             lblNumeroDocumento.TabIndex = 10;
@@ -139,7 +141,7 @@
             // txtNumeroDocumento
             // 
             txtNumeroDocumento.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNumeroDocumento.Location = new Point(414, 269);
+            txtNumeroDocumento.Location = new Point(414, 304);
             txtNumeroDocumento.Name = "txtNumeroDocumento";
             txtNumeroDocumento.Size = new Size(250, 27);
             txtNumeroDocumento.TabIndex = 11;
@@ -148,16 +150,16 @@
             // 
             lblAsunto.AutoSize = true;
             lblAsunto.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAsunto.Location = new Point(209, 311);
+            lblAsunto.Location = new Point(209, 346);
             lblAsunto.Name = "lblAsunto";
-            lblAsunto.Size = new Size(60, 21);
+            lblAsunto.Size = new Size(70, 21);
             lblAsunto.TabIndex = 12;
-            lblAsunto.Text = "Parte :";
+            lblAsunto.Text = "Asunto:";
             // 
             // txtAsunto
             // 
             txtAsunto.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtAsunto.Location = new Point(414, 308);
+            txtAsunto.Location = new Point(414, 343);
             txtAsunto.Name = "txtAsunto";
             txtAsunto.Size = new Size(250, 27);
             txtAsunto.TabIndex = 13;
@@ -166,7 +168,7 @@
             // 
             lblFechaIngreso.AutoSize = true;
             lblFechaIngreso.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblFechaIngreso.Location = new Point(209, 353);
+            lblFechaIngreso.Location = new Point(209, 388);
             lblFechaIngreso.Name = "lblFechaIngreso";
             lblFechaIngreso.Size = new Size(149, 21);
             lblFechaIngreso.TabIndex = 14;
@@ -175,7 +177,7 @@
             // dtpFechaIngreso
             // 
             dtpFechaIngreso.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dtpFechaIngreso.Location = new Point(414, 348);
+            dtpFechaIngreso.Location = new Point(414, 383);
             dtpFechaIngreso.Name = "dtpFechaIngreso";
             dtpFechaIngreso.Size = new Size(314, 27);
             dtpFechaIngreso.TabIndex = 15;
@@ -184,7 +186,7 @@
             // 
             lblObservaciones.AutoSize = true;
             lblObservaciones.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblObservaciones.Location = new Point(209, 394);
+            lblObservaciones.Location = new Point(209, 429);
             lblObservaciones.Name = "lblObservaciones";
             lblObservaciones.Size = new Size(130, 21);
             lblObservaciones.TabIndex = 16;
@@ -193,7 +195,7 @@
             // txtObservaciones
             // 
             txtObservaciones.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtObservaciones.Location = new Point(414, 391);
+            txtObservaciones.Location = new Point(414, 426);
             txtObservaciones.Multiline = true;
             txtObservaciones.Name = "txtObservaciones";
             txtObservaciones.Size = new Size(350, 60);
@@ -203,7 +205,7 @@
             // 
             btnRegistrar.BackColor = Color.Goldenrod;
             btnRegistrar.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegistrar.Location = new Point(69, 471);
+            btnRegistrar.Location = new Point(158, 506);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(200, 45);
             btnRegistrar.TabIndex = 18;
@@ -215,7 +217,7 @@
             // 
             btnLimpiar.BackColor = Color.Goldenrod;
             btnLimpiar.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLimpiar.Location = new Point(368, 471);
+            btnLimpiar.Location = new Point(414, 506);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(200, 45);
             btnLimpiar.TabIndex = 19;
@@ -227,7 +229,7 @@
             // 
             btnVolver.BackColor = Color.Goldenrod;
             btnVolver.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnVolver.Location = new Point(672, 471);
+            btnVolver.Location = new Point(672, 506);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(200, 45);
             btnVolver.TabIndex = 20;
@@ -265,15 +267,33 @@
             pictureBox1.TabIndex = 23;
             pictureBox1.TabStop = false;
             // 
-            // label1
+            // lblCodigoGenerado
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(414, 110);
-            label1.Name = "label1";
-            label1.Size = new Size(91, 21);
-            label1.TabIndex = 24;
-            label1.Text = "EX0000001";
+            lblCodigoGenerado.AutoSize = true;
+            lblCodigoGenerado.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCodigoGenerado.Location = new Point(414, 110);
+            lblCodigoGenerado.Name = "lblCodigoGenerado";
+            lblCodigoGenerado.Size = new Size(91, 21);
+            lblCodigoGenerado.TabIndex = 24;
+            lblCodigoGenerado.Text = "EX0000001";
+            // 
+            // lblDniRuc
+            // 
+            lblDniRuc.AutoSize = true;
+            lblDniRuc.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDniRuc.Location = new Point(209, 226);
+            lblDniRuc.Name = "lblDniRuc";
+            lblDniRuc.Size = new Size(92, 21);
+            lblDniRuc.TabIndex = 25;
+            lblDniRuc.Text = "DNI / RUC:";
+            // 
+            // txtDniRuc
+            // 
+            txtDniRuc.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtDniRuc.Location = new Point(414, 223);
+            txtDniRuc.Name = "txtDniRuc";
+            txtDniRuc.Size = new Size(250, 27);
+            txtDniRuc.TabIndex = 26;
             // 
             // FrmRegistroExpediente
             // 
@@ -281,7 +301,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 240, 241);
             ClientSize = new Size(884, 561);
-            Controls.Add(label1);
+            Controls.Add(txtDniRuc);
+            Controls.Add(lblDniRuc);
+            Controls.Add(lblCodigoGenerado);
             Controls.Add(pictureBox1);
             Controls.Add(picUPN);
             Controls.Add(picLosOlivos);
@@ -304,6 +326,7 @@
             Controls.Add(lblRemitente);
             Controls.Add(lblCodigo);
             Name = "FrmRegistroExpediente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "REGISTRO DE EXPEDIENTES";
             ((System.ComponentModel.ISupportInitialize)picLosOlivos).EndInit();
             ((System.ComponentModel.ISupportInitialize)picUPN).EndInit();
@@ -334,6 +357,8 @@
         private PictureBox picLosOlivos;
         private PictureBox picUPN;
         private PictureBox pictureBox1;
-        private Label label1;
+        private Label lblCodigoGenerado;
+        private Label lblDniRuc;
+        private TextBox txtDniRuc;
     }
 }

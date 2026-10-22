@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace REG_EXP
@@ -28,6 +23,24 @@ namespace REG_EXP
             // Mostrar nuevamente el inicio de sesión
             Log login = new Log();
             login.Show();
+        }
+
+        private void btnRegistrarExpediente_Click(object sender, EventArgs e)
+        {
+            // Abrir el formulario de registro de expedientes
+            RegistroExpedientes.FrmRegistroExpediente frmRegistro =
+                new RegistroExpedientes.FrmRegistroExpediente();
+
+            frmRegistro.ShowDialog();
+        }
+
+        private void btnGestionExpedientes_Click(object sender, EventArgs e)
+        {
+            // Abrir el formulario de gestión y búsqueda
+            registro_de_expedientes.Form1 frmGestion =
+                new registro_de_expedientes.Form1();
+
+            frmGestion.ShowDialog();
         }
     }
 }

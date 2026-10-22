@@ -4,17 +4,36 @@ namespace RegistroExpedientes
 {
     public partial class FrmRegistroExpediente : Form
     {
+        int numeroExpediente = 1;
+
         public FrmRegistroExpediente()
         {
             InitializeComponent();
+
+            // Buscar cuántos expedientes ya existen
+            if (File.Exists("expedientes.txt"))
+            {
+                string[] lineas = File.ReadAllLines("expedientes.txt");
+
+                for (int i = 0; i < lineas.Length; i++)
+                {
+                    if (lineas[i] == "------------------------------------")
+                    {
+                        numeroExpediente++;
+                    }
+                }
+            }
+
+            // Mostrar el siguiente código de expediente
+            lblCodigoGenerado.Text = "EX" + numeroExpediente.ToString("D6");
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             // Limpiar los datos ingresados
-            
             txtRemitente.Clear();
             cboTipoRemitente.SelectedIndex = -1;
+            txtDniRuc.Clear();
             cboTipoDocumento.SelectedIndex = -1;
             txtNumeroDocumento.Clear();
             txtAsunto.Clear();
@@ -27,8 +46,7 @@ namespace RegistroExpedientes
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            // Validar código del expediente
-           
+            // Validar remitente
             if (txtRemitente.Text == "")
             {
                 MessageBox.Show("Ingrese el nombre del remitente.");
@@ -44,6 +62,14 @@ namespace RegistroExpedientes
                 return;
             }
 
+            // Validar DNI o RUC
+            if (txtDniRuc.Text == "")
+            {
+                MessageBox.Show("Ingrese el DNI o RUC del remitente.");
+                txtDniRuc.Focus();
+                return;
+            }
+
             // Validar tipo de documento
             if (cboTipoDocumento.SelectedIndex == -1)
             {
@@ -55,7 +81,7 @@ namespace RegistroExpedientes
             // Validar número de documento
             if (txtNumeroDocumento.Text == "")
             {
-                MessageBox.Show("Ingrese el número de documento.");
+                MessageBox.Show("Ingrese el número del documento.");
                 txtNumeroDocumento.Focus();
                 return;
             }
@@ -71,9 +97,10 @@ namespace RegistroExpedientes
             // Guardar los datos en el archivo
             StreamWriter archivo = File.AppendText("expedientes.txt");
 
-          
+            archivo.WriteLine(lblCodigoGenerado.Text);
             archivo.WriteLine(txtRemitente.Text);
             archivo.WriteLine(cboTipoRemitente.Text);
+            archivo.WriteLine(txtDniRuc.Text);
             archivo.WriteLine(cboTipoDocumento.Text);
             archivo.WriteLine(txtNumeroDocumento.Text);
             archivo.WriteLine(txtAsunto.Text);
@@ -83,13 +110,17 @@ namespace RegistroExpedientes
 
             archivo.Close();
 
-            // Mostrar mensaje de confirmación
+            // Confirmar registro
             MessageBox.Show("Expediente registrado correctamente.");
 
-            // Limpiar los campos después del registro
-          
+            // Generar el siguiente código
+            numeroExpediente++;
+            lblCodigoGenerado.Text = "EX" + numeroExpediente.ToString("D6");
+
+            // Limpiar los campos
             txtRemitente.Clear();
             cboTipoRemitente.SelectedIndex = -1;
+            txtDniRuc.Clear();
             cboTipoDocumento.SelectedIndex = -1;
             txtNumeroDocumento.Clear();
             txtAsunto.Clear();

@@ -62,6 +62,7 @@
             btnRegistrarExpediente.TabIndex = 8;
             btnRegistrarExpediente.Text = "REGISTRAR EXPEDIENTE";
             btnRegistrarExpediente.UseVisualStyleBackColor = false;
+            btnRegistrarExpediente.Click += btnRegistrarExpediente_Click;
             // 
             // btnGestionExpedientes
             // 
@@ -75,6 +76,7 @@
             btnGestionExpedientes.TabIndex = 9;
             btnGestionExpedientes.Text = "GESTIÓN DE EXPEDIENTES";
             btnGestionExpedientes.UseVisualStyleBackColor = false;
+            btnGestionExpedientes.Click += btnGestionExpedientes_Click;
             // 
             // btnCerrarSesion
             // 

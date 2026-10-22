@@ -12,16 +12,10 @@
   <ItemGroup>
     <Compile Remove="creaUsuario.cs" />
     <Compile Remove="creaUsuario.Designer.cs" />
-    <Compile Remove="FrmRegistroExpediente.cs" />
-    <Compile Remove="FrmRegistroExpediente.Designer.cs" />
-    <Compile Remove="GestionBusqueda.cs" />
-    <Compile Remove="GestionBusqueda.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Remove="creaUsuario.resx" />
-    <EmbeddedResource Remove="FrmRegistroExpediente.resx" />
-    <EmbeddedResource Remove="GestionBusqueda.resx" />
   </ItemGroup>
 
   <ItemGroup>
