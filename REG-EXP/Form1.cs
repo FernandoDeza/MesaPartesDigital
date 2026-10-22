@@ -208,5 +208,56 @@ namespace registro_de_expedientes
         {
 
         }
+
+        private void btnOrdenar_Click(object sender, EventArgs e)
+        {
+            int cantidad = dgvExpedientes.Rows.Count - 1;
+
+            // Verificar que existan expedientes para ordenar
+            if (cantidad <= 1)
+            {
+                MessageBox.Show("No hay suficientes expedientes para ordenar.");
+                return;
+            }
+
+            // ORDENAMIENTO BURBUJA
+            // Ordenar alfabéticamente por nombre del remitente
+            for (int i = 0; i < cantidad - 1; i++)
+            {
+                for (int j = 0; j < cantidad - 1 - i; j++)
+                {
+                    string remitente1 =
+                        dgvExpedientes.Rows[j].Cells["colRemitente"].Value.ToString();
+
+                    string remitente2 =
+                        dgvExpedientes.Rows[j + 1].Cells["colRemitente"].Value.ToString();
+
+                    // Comparar los dos remitentes
+                    if (string.Compare(remitente1, remitente2, true) > 0)
+                    {
+                        // Intercambiar todos los datos de las filas
+                        for (int columna = 0;
+                             columna < dgvExpedientes.Columns.Count;
+                             columna++)
+                        {
+                            object auxiliar =
+                                dgvExpedientes.Rows[j].Cells[columna].Value;
+
+                            dgvExpedientes.Rows[j].Cells[columna].Value =
+                                dgvExpedientes.Rows[j + 1].Cells[columna].Value;
+
+                            dgvExpedientes.Rows[j + 1].Cells[columna].Value =
+                                auxiliar;
+                        }
+                    }
+                }
+            }
+
+            MessageBox.Show(
+                "Remitentes ordenados alfabéticamente mediante el método burbuja.",
+                "Ordenamiento completado",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
     }
 }

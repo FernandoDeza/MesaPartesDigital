@@ -62,6 +62,7 @@
             colAsunto = new DataGridViewTextBoxColumn();
             colFechaIngreso = new DataGridViewTextBoxColumn();
             colObservaciones = new DataGridViewTextBoxColumn();
+            btnOrdenar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -173,7 +174,7 @@
             // 
             btnCargar.BackColor = Color.Goldenrod;
             btnCargar.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold);
-            btnCargar.Location = new Point(139, 634);
+            btnCargar.Location = new Point(243, 634);
             btnCargar.Margin = new Padding(2);
             btnCargar.Name = "btnCargar";
             btnCargar.Size = new Size(107, 61);
@@ -186,7 +187,7 @@
             // 
             btnModificar.BackColor = Color.Goldenrod;
             btnModificar.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold);
-            btnModificar.Location = new Point(262, 634);
+            btnModificar.Location = new Point(366, 634);
             btnModificar.Margin = new Padding(2);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(107, 61);
@@ -199,7 +200,7 @@
             // 
             btnEliminar.BackColor = Color.Goldenrod;
             btnEliminar.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold);
-            btnEliminar.Location = new Point(385, 634);
+            btnEliminar.Location = new Point(489, 634);
             btnEliminar.Margin = new Padding(2);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(105, 61);
@@ -212,7 +213,7 @@
             // 
             btnLimpiar.BackColor = Color.Goldenrod;
             btnLimpiar.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold);
-            btnLimpiar.Location = new Point(506, 634);
+            btnLimpiar.Location = new Point(610, 634);
             btnLimpiar.Margin = new Padding(2);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(105, 61);
@@ -225,7 +226,7 @@
             // 
             btnSalir.BackColor = Color.Goldenrod;
             btnSalir.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold);
-            btnSalir.Location = new Point(707, 634);
+            btnSalir.Location = new Point(811, 634);
             btnSalir.Margin = new Padding(2);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(105, 61);
@@ -378,12 +379,26 @@
             colObservaciones.HeaderText = "Observaciones";
             colObservaciones.Name = "colObservaciones";
             // 
+            // btnOrdenar
+            // 
+            btnOrdenar.BackColor = Color.Goldenrod;
+            btnOrdenar.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold);
+            btnOrdenar.Location = new Point(50, 634);
+            btnOrdenar.Margin = new Padding(2);
+            btnOrdenar.Name = "btnOrdenar";
+            btnOrdenar.Size = new Size(107, 61);
+            btnOrdenar.TabIndex = 24;
+            btnOrdenar.Text = "ORDENAR REMITENTES";
+            btnOrdenar.UseVisualStyleBackColor = false;
+            btnOrdenar.Click += btnOrdenar_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 240, 241);
             ClientSize = new Size(966, 708);
+            Controls.Add(btnOrdenar);
             Controls.Add(dgvExpedientes);
             Controls.Add(textBox7);
             Controls.Add(textBox6);
@@ -457,6 +472,7 @@
         private DataGridViewTextBoxColumn colAsunto;
         private DataGridViewTextBoxColumn colFechaIngreso;
         private DataGridViewTextBoxColumn colObservaciones;
+        private Button btnOrdenar;
     }
 }
 
