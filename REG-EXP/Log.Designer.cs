@@ -187,9 +187,9 @@
             label2.Font = new Font("Century Gothic", 12F);
             label2.Location = new Point(70, 181);
             label2.Name = "label2";
-            label2.Size = new Size(70, 21);
+            label2.Size = new Size(231, 21);
             label2.TabIndex = 3;
-            label2.Text = "Usuario:";
+            label2.Text = "Correo electrónico (Usuario):";
             // 
             // label1
             // 

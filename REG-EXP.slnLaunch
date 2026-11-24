@@ -1,0 +1,11 @@
+[
+  {
+    "Name": "MesaPartesDigital",
+    "Projects": [
+      {
+        "Path": "REG-EXP\\REG-EXP.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

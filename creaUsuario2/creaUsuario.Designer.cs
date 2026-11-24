@@ -91,7 +91,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 12F);
-            label3.Location = new Point(232, 196);
+            label3.Location = new Point(208, 194);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(83, 21);
@@ -102,7 +102,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 12F);
-            label4.Location = new Point(232, 231);
+            label4.Location = new Point(208, 229);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(84, 21);
@@ -113,7 +113,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 12F);
-            label5.Location = new Point(232, 303);
+            label5.Location = new Point(208, 301);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(216, 21);
@@ -124,34 +124,34 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 12F);
-            label6.Location = new Point(232, 336);
+            label6.Location = new Point(208, 334);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(158, 21);
+            label6.Size = new Size(231, 21);
             label6.TabIndex = 5;
-            label6.Text = "Correo Electronico:";
+            label6.Text = "Correo electrónico (Usuario):";
             // 
             // txtNombres
             // 
-            txtNombres.Location = new Point(351, 197);
+            txtNombres.Location = new Point(313, 197);
             txtNombres.Margin = new Padding(2);
             txtNombres.Name = "txtNombres";
-            txtNombres.Size = new Size(219, 23);
+            txtNombres.Size = new Size(285, 23);
             txtNombres.TabIndex = 6;
             txtNombres.TextChanged += textBox1_TextChanged;
             // 
             // txtApellidos
             // 
-            txtApellidos.Location = new Point(351, 232);
+            txtApellidos.Location = new Point(313, 232);
             txtApellidos.Margin = new Padding(2);
             txtApellidos.Name = "txtApellidos";
-            txtApellidos.Size = new Size(219, 23);
+            txtApellidos.Size = new Size(285, 23);
             txtApellidos.TabIndex = 7;
             txtApellidos.TextChanged += textBox2_TextChanged;
             // 
             // txtDocumento
             // 
-            txtDocumento.Location = new Point(517, 301);
+            txtDocumento.Location = new Point(545, 301);
             txtDocumento.Margin = new Padding(2);
             txtDocumento.Name = "txtDocumento";
             txtDocumento.Size = new Size(53, 23);
@@ -160,7 +160,7 @@
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(408, 334);
+            txtCorreo.Location = new Point(436, 334);
             txtCorreo.Margin = new Padding(2);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(162, 23);
@@ -171,7 +171,7 @@
             cxbTipoDoc.DropDownStyle = ComboBoxStyle.DropDownList;
             cxbTipoDoc.FormattingEnabled = true;
             cxbTipoDoc.Items.AddRange(new object[] { "DNI", "CE" });
-            cxbTipoDoc.Location = new Point(452, 301);
+            cxbTipoDoc.Location = new Point(480, 301);
             cxbTipoDoc.Margin = new Padding(2);
             cxbTipoDoc.Name = "cxbTipoDoc";
             cxbTipoDoc.Size = new Size(61, 23);
@@ -181,7 +181,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Century Gothic", 12F);
-            label7.Location = new Point(232, 368);
+            label7.Location = new Point(208, 366);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
             label7.Size = new Size(125, 21);
@@ -193,7 +193,7 @@
             cxbCargo.DropDownStyle = ComboBoxStyle.DropDownList;
             cxbCargo.FormattingEnabled = true;
             cxbCargo.Items.AddRange(new object[] { "Jefe de Registro", "Auxiliar de Registro", "Practicante" });
-            cxbCargo.Location = new Point(408, 366);
+            cxbCargo.Location = new Point(436, 366);
             cxbCargo.Margin = new Padding(2);
             cxbCargo.Name = "cxbCargo";
             cxbCargo.Size = new Size(162, 23);
@@ -202,7 +202,7 @@
             // dpxtFechaNacimiento
             // 
             dpxtFechaNacimiento.Format = DateTimePickerFormat.Short;
-            dpxtFechaNacimiento.Location = new Point(454, 266);
+            dpxtFechaNacimiento.Location = new Point(482, 266);
             dpxtFechaNacimiento.Margin = new Padding(2);
             dpxtFechaNacimiento.Name = "dpxtFechaNacimiento";
             dpxtFechaNacimiento.Size = new Size(116, 23);
@@ -212,7 +212,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 12F);
-            label8.Location = new Point(232, 268);
+            label8.Location = new Point(208, 266);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
             label8.Size = new Size(183, 21);
@@ -287,7 +287,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Century Gothic", 12F);
-            label9.Location = new Point(232, 401);
+            label9.Location = new Point(208, 399);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(240, 21);
@@ -298,7 +298,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Century Gothic", 12F);
-            label10.Location = new Point(235, 437);
+            label10.Location = new Point(211, 435);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
             label10.Size = new Size(199, 21);
@@ -313,25 +313,25 @@
             // 
             // txtContraseñaNueva
             // 
-            txtContraseñaNueva.Location = new Point(472, 403);
+            txtContraseñaNueva.Location = new Point(480, 403);
             txtContraseñaNueva.Margin = new Padding(2);
             txtContraseñaNueva.Name = "txtContraseñaNueva";
-            txtContraseñaNueva.Size = new Size(98, 23);
+            txtContraseñaNueva.Size = new Size(118, 23);
             txtContraseñaNueva.TabIndex = 23;
             txtContraseñaNueva.UseSystemPasswordChar = true;
             // 
             // txtContraseñaConfirmacion
             // 
-            txtContraseñaConfirmacion.Location = new Point(472, 435);
+            txtContraseñaConfirmacion.Location = new Point(480, 435);
             txtContraseñaConfirmacion.Margin = new Padding(2);
             txtContraseñaConfirmacion.Name = "txtContraseñaConfirmacion";
-            txtContraseñaConfirmacion.Size = new Size(98, 23);
+            txtContraseñaConfirmacion.Size = new Size(118, 23);
             txtContraseñaConfirmacion.TabIndex = 24;
             // 
             // txtpictureojoCerrado
             // 
             txtpictureojoCerrado.Image = (Image)resources.GetObject("txtpictureojoCerrado.Image");
-            txtpictureojoCerrado.Location = new Point(532, 403);
+            txtpictureojoCerrado.Location = new Point(561, 403);
             txtpictureojoCerrado.Margin = new Padding(2);
             txtpictureojoCerrado.Name = "txtpictureojoCerrado";
             txtpictureojoCerrado.Size = new Size(38, 23);
@@ -343,7 +343,7 @@
             // txlOjocerrado
             // 
             txlOjocerrado.Image = (Image)resources.GetObject("txlOjocerrado.Image");
-            txlOjocerrado.Location = new Point(532, 435);
+            txlOjocerrado.Location = new Point(561, 435);
             txlOjocerrado.Margin = new Padding(2);
             txlOjocerrado.Name = "txlOjocerrado";
             txlOjocerrado.Size = new Size(38, 23);

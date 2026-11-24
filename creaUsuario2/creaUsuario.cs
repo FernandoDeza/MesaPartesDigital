@@ -86,7 +86,7 @@ namespace formulario_creacion_de_cuenta
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             // Validar nombres
-            if (txtNombres.Text == "")
+            if (txtNombres.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese los nombres.");
                 txtNombres.Focus();
@@ -94,7 +94,7 @@ namespace formulario_creacion_de_cuenta
             }
 
             // Validar apellidos
-            if (txtApellidos.Text == "")
+            if (txtApellidos.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese los apellidos.");
                 txtApellidos.Focus();
@@ -110,7 +110,7 @@ namespace formulario_creacion_de_cuenta
             }
 
             // Validar número de documento
-            if (txtDocumento.Text == "")
+            if (txtDocumento.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese el número de documento.");
                 txtDocumento.Focus();
@@ -118,9 +118,29 @@ namespace formulario_creacion_de_cuenta
             }
 
             // Validar correo electrónico
-            if (txtCorreo.Text == "")
+            if (txtCorreo.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese el correo electrónico.");
+                txtCorreo.Focus();
+                return;
+            }
+
+            // Comprobar el formato del correo electrónico
+            try
+            {
+                System.Net.Mail.MailAddress correo =
+                    new System.Net.Mail.MailAddress(txtCorreo.Text.Trim());
+
+                if (correo.Address != txtCorreo.Text.Trim())
+                {
+                    MessageBox.Show("Ingrese un correo electrónico válido.");
+                    txtCorreo.Focus();
+                    return;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Ingrese un correo electrónico válido.");
                 txtCorreo.Focus();
                 return;
             }
@@ -158,9 +178,34 @@ namespace formulario_creacion_de_cuenta
                 return;
             }
 
+            // Guardar la cuenta del usuario
+            try
+            {
+                if (Usuarios.verificaUsuario(txtCorreo.Text))
+                {
+                    MessageBox.Show(
+                        "Este correo electrónico ya está registrado.");
+
+                    txtCorreo.Focus();
+                    return;
+                }
+
+                Usuarios.registrarUsuario(
+                    txtCorreo.Text,
+                    txtContraseñaNueva.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al registrar la cuenta: " + ex.Message);
+                return;
+            }
+
             // Registro correcto
             MessageBox.Show(
-                "¡Cuenta registrada con éxito!",
+                "¡Cuenta registrada con éxito!\n\n" +
+                "Su usuario es: " + txtCorreo.Text.Trim() +
+                "\nUtilice su correo electrónico para iniciar sesión.",
                 "Registro",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
