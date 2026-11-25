@@ -1,4 +1,5 @@
-using creaUsuario;
+using System;
+using System.Windows.Forms;
 using formulario_creacion_de_cuenta;
 
 namespace REG_EXP
@@ -9,7 +10,6 @@ namespace REG_EXP
         {
             InitializeComponent();
 
-            // Ocultar la contraseña al iniciar
             textBox2.UseSystemPasswordChar = true;
         }
 
@@ -20,13 +20,11 @@ namespace REG_EXP
 
         private void btregistro_Click(object sender, EventArgs e)
         {
-            DialogResult respuesta = MessageBox.Show(
+            if (MessageBox.Show(
                 "¿Seguro que quieres salir?",
                 "Salir",
                 MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-
-            if (respuesta == DialogResult.Yes)
+                MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -40,8 +38,7 @@ namespace REG_EXP
         private void linkLabel1_LinkClicked(
             object sender, LinkLabelLinkClickedEventArgs e)
         {
-            formulario_creacion_de_cuenta.creaUsuario frmCrear =
-                new formulario_creacion_de_cuenta.creaUsuario();
+            creaUsuario frmCrear = new creaUsuario();
 
             frmCrear.ShowDialog();
         }
@@ -51,54 +48,70 @@ namespace REG_EXP
 
         }
 
+        // Verificar que el texto no este vacio
+        static bool verificaTexto(string texto)
+        {
+            bool band = false;
+
+            for (int i = 0; i < texto.Length; i++)
+            {
+                if (texto[i] != ' ')
+                {
+                    band = true;
+                    break;
+                }
+            }
+
+            return band;
+        }
+
         private void bttingresa_Click(object sender, EventArgs e)
         {
-            // Validar usuario
-            if (textBox1.Text.Trim() == "")
+            // Validar los datos ingresados
+            if (verificaTexto(textBox1.Text) == false)
             {
                 MessageBox.Show("Ingrese su correo electrónico.");
                 textBox1.Focus();
                 return;
             }
 
-            // Validar clave
-            if (textBox2.Text == "")
+            if (verificaTexto(textBox2.Text) == false)
             {
                 MessageBox.Show("Ingrese su clave.");
                 textBox2.Focus();
                 return;
             }
 
-            // Verificar las credenciales registradas
-            try
-            {
-                if (Usuarios.validarUsuario(
-                    textBox1.Text, textBox2.Text) == false)
-                {
-                    MessageBox.Show(
-                        "Usuario o contraseña incorrectos.",
-                        "Acceso denegado",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+            string correo = textBox1.Text;
+            string clave = textBox2.Text;
 
-                    textBox2.Clear();
-                    textBox2.Focus();
-                    return;
-                }
+            // Verificar los datos en el archivo binario
+            if (creaUsuario.validarUsuario(correo, clave) == true)
+            {
+                Form2 menu = new Form2();
+
+                this.Hide();
+
+                menu.ShowDialog();
+
+                textBox1.Clear();
+                textBox2.Clear();
+
+                this.Show();
+
+                textBox1.Focus();
             }
-            catch (Exception ex)
+            else
             {
                 MessageBox.Show(
-                    "Error al verificar el usuario: " + ex.Message);
-                return;
+                    "Usuario o contraseña incorrectos.",
+                    "Acceso denegado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                textBox2.Clear();
+                textBox2.Focus();
             }
-
-            // Abrir el menú principal
-            Form2 menu = new Form2();
-            menu.Show();
-
-            // Ocultar el inicio de sesión
-            this.Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
